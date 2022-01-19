@@ -48,30 +48,15 @@ class _PageBottomState extends State<PageBottom> {
           switch(index){
             case 0:
               print("Goto PAge Alerte");
-              Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(builder: (BuildContext context) {
-                    return PageAlert();
-                  })
-              );
+              Navigator.pushReplacementNamed(context,"/alert");
               break;
             case 1:
               print("Goto PAge Simple");
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (BuildContext context) {
-                    return PageSimple();
-                  })
-              );
+              Navigator.pushNamed(context,"/simple");
               break;
             case 2:
               print("Goto PAge Snack");
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (BuildContext context) {
-                    return PageSnack();
-                  })
-              );
+              Navigator.pushNamed(context,"/snack");
               break;
           }
         },
