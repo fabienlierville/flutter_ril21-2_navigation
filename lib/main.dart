@@ -21,6 +21,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       routes: <String, WidgetBuilder>{
         '/alert': (c) => PageAlert(),
+        '/bottom': (c) => PageBottom(),
         '/simple': (BuildContext c) { return PageSimple();},
         '/snack': (BuildContext context) => PageSnack(),
       },

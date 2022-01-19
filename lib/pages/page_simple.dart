@@ -31,14 +31,10 @@ class _PageSimpleState extends State<PageSimple> {
             ElevatedButton(
               child: Text("PushRemoveUntil Bottom"),
               onPressed: (){
-                Navigator.pushAndRemoveUntil(
+                Navigator.pushNamedAndRemoveUntil(
                     context,
-                    MaterialPageRoute(builder: (context){
-                      return PageBottom();
-                    }),
-                    (route) {
-                      return false;
-                    }
+                    "/bottom",
+                    ModalRoute.withName("/alert")
                 );
               },
             ),

@@ -18,12 +18,7 @@ class _PageAlertState extends State<PageAlert> {
         actions: [
           TextButton(
               onPressed: (){
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (BuildContext context) {
-                      return PageBottom();
-                    })
-                );
+                Navigator.pushNamed(context,"/bottom");
               },
               child: Text("Bottom", style: TextStyle(color: Colors.black),)
           )
