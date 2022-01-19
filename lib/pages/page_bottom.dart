@@ -29,6 +29,26 @@ class _PageBottomState extends State<PageBottom> {
           ],
         )
       ),
+      bottomNavigationBar: BottomNavigationBar(
+        items: [
+          BottomNavigationBarItem(icon: Icon(Icons.warning), label: "Alert"),
+          BottomNavigationBarItem(icon: Icon(Icons.forward), label: "Simple"),
+          BottomNavigationBarItem(icon: Icon(Icons.favorite), label: "Snack"),
+        ],
+        onTap: (int index){
+          switch(index){
+            case 0:
+              print("Goto PAge Alerte");
+              break;
+            case 1:
+              print("Goto PAge Simple");
+              break;
+            case 2:
+              print("Goto PAge Snack");
+              break;
+          }
+        },
+      ),
     );
   }
 
