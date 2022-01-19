@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:navigation/pages/page_bottom.dart';
 
 class PageSimple extends StatefulWidget {
   const PageSimple({Key? key}) : super(key: key);
@@ -26,6 +27,19 @@ class _PageSimpleState extends State<PageSimple> {
                 simple();
               },
             ),
+            ElevatedButton(
+              child: Text("PushRemoveUntil Bottom"),
+              onPressed: (){
+                Navigator.pushAndRemoveUntil(
+                    context,
+                    MaterialPageRoute(builder: (context){
+                      return PageBottom();
+                    }),
+                    (route) => false
+                );
+              },
+            ),
+
           ],
         )
       ),
