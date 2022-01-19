@@ -15,12 +15,32 @@ class _PageSnackState extends State<PageSnack> {
       appBar: AppBar(
         title: Text("SnackBar"),
       ),
-      body: const Center(
+      body: Center(
         child: ElevatedButton(
-          onPressed: null,
+          onPressed: (){
+            callSnack();
+          },
           child: Text("Appuyez moi"),
         ),
       ),
     );
   }
+
+  void callSnack(){
+    SnackBar snackBar = SnackBar(
+        content: const Text("Impossible d'appeler l'API"),
+      duration: Duration(seconds: 4),
+      backgroundColor: Colors.black54,
+      action: SnackBarAction(
+          label: "Clic",
+          onPressed: (){
+            print("Clic SnackBar");
+          },
+        textColor: Colors.white,
+      ),
+    );
+
+    ScaffoldMessenger.of(context).showSnackBar(snackBar);
+  }
+
 }
