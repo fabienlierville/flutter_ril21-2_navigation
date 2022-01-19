@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:navigation/pages/page_alert.dart';
+import 'package:navigation/pages/page_bottom.dart';
 import 'package:navigation/pages/page_simple.dart';
 import 'package:navigation/pages/page_snack.dart';
 
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.amber,
       ),
-      home: const PageSimple(),
+      home: const PageBottom(),
       debugShowCheckedModeBanner: false,
     );
   }
