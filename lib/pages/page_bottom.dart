@@ -23,7 +23,7 @@ class _PageBottomState extends State<PageBottom> {
             ElevatedButton(
               child: Text("Appuyez moi"),
               onPressed: (){
-                simple();
+                bottom();
               },
             ),
           ],
@@ -32,14 +32,12 @@ class _PageBottomState extends State<PageBottom> {
     );
   }
 
-  Future<void> simple() async{
-    showDialog(
+  Future<void> bottom() async{
+    showModalBottomSheet(
       context: context,
-      barrierDismissible: false,
+      isDismissible: false,
       builder: (BuildContext contextDialog){
-        return SimpleDialog(
-          title: Text("Choississez un moyen de transport", textScaleFactor: 1.2,),
-          contentPadding: EdgeInsets.all(5.0),
+        return Column(
           children: [
             SimpleDialogOption(
               child: Row(
