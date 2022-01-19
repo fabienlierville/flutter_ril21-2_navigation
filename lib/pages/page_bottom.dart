@@ -42,7 +42,7 @@ class _PageBottomState extends State<PageBottom> {
           switch(index){
             case 0:
               print("Goto PAge Alerte");
-              Navigator.push(
+              Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(builder: (BuildContext context) {
                     return PageAlert();

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:navigation/pages/page_bottom.dart';
 
 class PageAlert extends StatefulWidget {
   const PageAlert({Key? key}) : super(key: key);
@@ -14,6 +15,19 @@ class _PageAlertState extends State<PageAlert> {
     return Scaffold(
       appBar: AppBar(
         title: Text("Alert"),
+        actions: [
+          TextButton(
+              onPressed: (){
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (BuildContext context) {
+                      return PageBottom();
+                    })
+                );
+              },
+              child: Text("Bottom")
+          )
+        ],
       ),
       body: Center(
         child: ElevatedButton(
