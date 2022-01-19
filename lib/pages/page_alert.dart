@@ -8,6 +8,7 @@ class PageAlert extends StatefulWidget {
 }
 
 class _PageAlertState extends State<PageAlert> {
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,10 +19,19 @@ class _PageAlertState extends State<PageAlert> {
         child: ElevatedButton(
           child: Text("Appuyez moi"),
           onPressed: (){
-            //Todo
+            alerte();
           },
         ),
       ),
+    );
+  }
+
+  Future<void> alerte() async{
+    showDialog(
+      context: context,
+      builder: (BuildContext contextDialog){
+        return Text("Coucou");
+      }
     );
   }
 }
