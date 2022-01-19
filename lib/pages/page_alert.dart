@@ -29,6 +29,8 @@ class _PageAlertState extends State<PageAlert> {
   Future<void> alerte() async{
     showDialog(
       context: context,
+      barrierDismissible: false,
+      barrierColor: Color(0xa4521422),
       builder: (BuildContext contextDialog){
         return AlertDialog(
           title: Text("Ceci est une alerte", textScaleFactor: 2,),
@@ -38,9 +40,16 @@ class _PageAlertState extends State<PageAlert> {
             TextButton(
                 onPressed: (){
                   print("Annuler");
-
+                  Navigator.pop(contextDialog);
                 },
                 child: Text("Annuler", style: TextStyle(color: Colors.red),)
+            ),
+            TextButton(
+                onPressed: (){
+                  print("Valider");
+                  Navigator.pop(contextDialog);
+                },
+                child: Text("Valider", style: TextStyle(color: Colors.blue),)
             ),
           ],
         );
