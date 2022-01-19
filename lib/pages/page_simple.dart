@@ -8,6 +8,7 @@ class PageSimple extends StatefulWidget {
 }
 
 class _PageSimpleState extends State<PageSimple> {
+  String choix = "Aucun";
 
   @override
   Widget build(BuildContext context) {
@@ -18,11 +19,11 @@ class _PageSimpleState extends State<PageSimple> {
       body: Center(
         child:Column(
           children: [
-            Text("Choix de l'utilisateur : "),
+            Text("Choix de l'utilisateur : ${choix}"),
             ElevatedButton(
               child: Text("Appuyez moi"),
               onPressed: (){
-                alerte();
+                simple();
               },
             ),
           ],
@@ -31,30 +32,56 @@ class _PageSimpleState extends State<PageSimple> {
     );
   }
 
-  Future<void> alerte() async{
+  Future<void> simple() async{
     showDialog(
       context: context,
       barrierDismissible: false,
-      barrierColor: Color(0xa4521422),
       builder: (BuildContext contextDialog){
-        return AlertDialog(
-          title: Text("Ceci est une alerte", textScaleFactor: 2,),
-          content: Text("Nous avons un prolbème avec l'API ...."),
+        return SimpleDialog(
+          title: Text("Choississez un moyen de transport", textScaleFactor: 1.2,),
           contentPadding: EdgeInsets.all(5.0),
-          actions: [
-            TextButton(
-                onPressed: (){
-                  print("Annuler");
+          children: [
+            SimpleDialogOption(
+              child: Row(
+                children: [
+                  Icon(Icons.directions_car),
+                  Text("Voiture")
+                ],
+              ),
+              onPressed: (){
+                setState(() {
+                  choix = "Voiture";
                   Navigator.pop(contextDialog);
-                },
-                child: Text("Annuler", style: TextStyle(color: Colors.red),)
+                });
+              },
             ),
-            TextButton(
-                onPressed: (){
-                  print("Valider");
+            SimpleDialogOption(
+              child: Row(
+                children: [
+                  Icon(Icons.directions_boat),
+                  Text("Bateau")
+                ],
+              ),
+              onPressed: (){
+                setState(() {
+                  choix = "Bateau";
                   Navigator.pop(contextDialog);
-                },
-                child: Text("Valider", style: TextStyle(color: Colors.blue),)
+                });
+              },
+            ),
+            SimpleDialogOption(
+              child: Row(
+                children: [
+                  Icon(Icons.airplanemode_active),
+                  Text("Avion")
+                ],
+              ),
+              onPressed: (){
+                setState(() {
+                  choix = "Avion";
+                  Navigator.pop(contextDialog);
+                });
+              },
             ),
           ],
         );
