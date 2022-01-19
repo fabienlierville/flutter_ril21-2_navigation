@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:navigation/pages/page_alert.dart';
 import 'package:navigation/pages/page_bottom.dart';
 
 class PageSimple extends StatefulWidget {
@@ -35,7 +36,9 @@ class _PageSimpleState extends State<PageSimple> {
                     MaterialPageRoute(builder: (context){
                       return PageBottom();
                     }),
-                    (route) => false
+                    (route) {
+                      return false;
+                    }
                 );
               },
             ),

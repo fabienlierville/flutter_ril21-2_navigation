@@ -29,6 +29,12 @@ class _PageBottomState extends State<PageBottom> {
                 bottom();
               },
             ),
+            ElevatedButton(
+              child: Text("Pop"),
+              onPressed: (){
+                Navigator.pop(context);
+              },
+            ),
           ],
         )
       ),

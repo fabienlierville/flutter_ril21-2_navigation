@@ -19,6 +19,11 @@ class MyApp extends StatelessWidget {
       ),
       home: const PageBottom(),
       debugShowCheckedModeBanner: false,
+      routes: <String, WidgetBuilder>{
+        '/alert': (c) => PageAlert(),
+        '/simple': (BuildContext c) { return PageSimple();},
+        '/snack': (BuildContext context) => PageSnack(),
+      },
     );
   }
 }
