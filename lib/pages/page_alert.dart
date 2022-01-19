@@ -25,7 +25,7 @@ class _PageAlertState extends State<PageAlert> {
                     })
                 );
               },
-              child: Text("Bottom")
+              child: Text("Bottom", style: TextStyle(color: Colors.black),)
           )
         ],
       ),
